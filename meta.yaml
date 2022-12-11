@@ -1,0 +1,46 @@
+{% set name = "uncertainties" %}
+{% set version = "3.1.7" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 80111e0839f239c5b233cb4772017b483a0b7a1573a581b92ab7746a35e6faab
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - future
+    - pip
+    - python
+  run:
+    - future
+    - python
+
+test:
+  imports:
+    - uncertainties
+    - uncertainties.lib1to2
+    - uncertainties.lib1to2.fixes
+    - uncertainties.unumpy
+  requires:
+    - nose
+    - numpy
+
+about:
+  home: "http://uncertainties-python-package.readthedocs.io/"
+  license: BSD
+  license_family: BSD
+  license_file: 
+  summary: "Transparent calculations with uncertainties on the quantities involved (aka error propagation); fast calculation of derivatives"
+  doc_url: https://uncertainties-python-package.readthedocs.io/
+  dev_url: https://github.com/lebigot/uncertainties
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
