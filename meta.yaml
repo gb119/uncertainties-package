@@ -23,16 +23,6 @@ requirements:
     - future
     - python
 
-test:
-  imports:
-    - uncertainties
-    - uncertainties.lib1to2
-    - uncertainties.lib1to2.fixes
-    - uncertainties.unumpy
-  requires:
-    - nose
-    - numpy
-
 about:
   home: "http://uncertainties-python-package.readthedocs.io/"
   license: BSD
