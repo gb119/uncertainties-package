@@ -1,5 +1,5 @@
 {% set name = "uncertainties" %}
-{% set version = "3.1.7" %}
+{% set version = "3.2.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,10 +7,11 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 80111e0839f239c5b233cb4772017b483a0b7a1573a581b92ab7746a35e6faab
+  sha256: e62c86fdc64429828229de6ab4e11466f114907e6bd343c077858994cc12e00b
 
 build:
   number: 0
+  noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
